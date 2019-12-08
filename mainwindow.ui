@@ -40,7 +40,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_3">
        <attribute name="title">
@@ -239,8 +239,8 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
        <widget class="QTableView" name="tableclient">
         <property name="geometry">
          <rect>
-          <x>90</x>
-          <y>80</y>
+          <x>10</x>
+          <y>70</y>
           <width>431</width>
           <height>161</height>
          </rect>
@@ -262,8 +262,19 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
          <string/>
         </property>
        </widget>
+       <widget class="QLineEdit" name="lineEdit_7">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>30</y>
+          <width>113</width>
+          <height>20</height>
+         </rect>
+        </property>
+       </widget>
        <zorder>background</zorder>
        <zorder>tableclient</zorder>
+       <zorder>lineEdit_7</zorder>
       </widget>
       <widget class="QWidget" name="tab_4">
        <attribute name="title">
@@ -459,7 +470,7 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
       </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
-        <string>gerer les points de fidelite</string>
+        <string>affichage  des carte</string>
        </attribute>
        <widget class="QLabel" name="label_6">
         <property name="geometry">
@@ -475,6 +486,16 @@ font: 75 8pt &quot;MS Shell Dlg 2&quot;;</string>
         </property>
         <property name="text">
          <string/>
+        </property>
+       </widget>
+       <widget class="QTableView" name="tablecarte">
+        <property name="geometry">
+         <rect>
+          <x>210</x>
+          <y>30</y>
+          <width>256</width>
+          <height>192</height>
+         </rect>
         </property>
        </widget>
       </widget>

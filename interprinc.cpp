@@ -22,7 +22,7 @@ interprinc::~interprinc()
 
 void interprinc::on_pushButton_clicked()
 {
-    MainWindow w;
+   MainWindow w;
 
     QSqlQuery query;
         QString select = "SELECT * FROM COMPTES WHERE LOGIN_ID=? AND LOGIN_PASS=?";
@@ -35,8 +35,8 @@ void interprinc::on_pushButton_clicked()
           {
 
               if (query.next())
-              {  qDebug() << "mmm";
-                  hide();
+              {
+                  w.show();
               }
                       else
                        {

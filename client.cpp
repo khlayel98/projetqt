@@ -74,22 +74,20 @@ bool Client::supprimer(int CIN)
 
     Connexion co;
 
-    QString res= QString::number(CIN);
-      query.prepare("Delete * from TABECLIENT WHERE cin =:CIN ");
-      query.bindValue(":cin",res);
+//    QString res= QString::number(CIN);
+      query.prepare("Delete * from tabeclient WHERE CIN =:CIN ");
+      query.bindValue(":CIN",CIN);
       return    query.exec();
 
 }
 
 bool Client::modifier()
  {      QSqlQuery query;
-        query.prepare("update tabeclient set nom=:nom,prenom=:prenom,,adresse=:adresse where CIN=:CIN");
-        query.bindValue(":cin",CIN);
+        query.prepare("update TABECLIENT set  NOM=:nom,PRENOM=:prenom,,ADRESSE=:adresse where CIN=:CIN");
+      //  query.bindValue(":CIN",CIN);
         query.bindValue(":nom",nom);
         query.bindValue(":prenom",prenom);
-        query.bindValue(":age", adresse);
-
-
+        query.bindValue(":adresse", adresse);
         return    query.exec();
 
 }
@@ -104,4 +102,16 @@ QSqlQueryModel * Client::recherche(int CIN)
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("ADRESSE"));
       return model;
+}
+QSqlQueryModel * Client:: recherche2(QString nom , QString prenom)
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    model->setQuery("SELECT * FROM tabeclient WHERE NOM like '"+nom+"%' or PRENOM like ' "+prenom+"%' " );
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("CIN"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOM"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("PRENOM"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("ADRESSE"));
+      return model;
+
+
 }

@@ -18,6 +18,7 @@ public:
      bool supprimer(int);
     bool modifier();
      QSqlQueryModel * recherche(int id);
+        QSqlQueryModel * recherche2(QString  , QString );
 private:
     QString nom,prenom,adresse;
     int CIN;

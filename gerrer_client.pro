@@ -29,19 +29,16 @@ SOURCES += \
         mainwindow.cpp \
     Client.cpp \
     connexion.cpp \
-    interprinc.cpp \
     carte.cpp
 
 HEADERS += \
         mainwindow.h \
     Client.h \
     connexion.h \
-    interprinc.h \
     carte.h
 
 FORMS += \
-        mainwindow.ui \
-    interprinc.ui
+        mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
